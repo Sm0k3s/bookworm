@@ -1,9 +1,21 @@
 from django.shortcuts import render
 from .models import Book, BookCategory
-from .serializers import BookSerializer, BookCategorySerializer
+from .serializers import BookSerializer, BookCategorySerializer, UserSerializer
 from rest_framework import generics
+from django.contrib.auth.models import User
 
 # Create your views here.
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    name = 'user-list'
+
+
+class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    name = 'user-detail'
 
 
 class BookList(generics.ListCreateAPIView):
@@ -21,7 +33,7 @@ class BookDetail(generics.RetrieveUpdateDestroyAPIView):
 class BookCategoryList(generics.ListCreateAPIView):
     queryset = BookCategory.objects.all()
     serializer_class = BookCategorySerializer
-    name = 'genres'
+    name = 'book-categories'
 
 
 class BookCategoryDetail(generics.RetrieveUpdateDestroyAPIView):

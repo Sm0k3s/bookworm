@@ -13,4 +13,10 @@ urlpatterns = [
     url(r'^book-categories/(?P<pk>[0-9]+)/$',
         views.BookCategoryDetail.as_view(),
         name=views.BookCategoryDetail.name),
+    url(r'^users/$',
+        views.UserList.as_view(),
+        name=views.UserList.name),
+    url(r'^users/(?P<pk>[0-9]+)/$',
+        views.UserDetail.as_view(),
+        name=views.UserDetail.name),
 ]
