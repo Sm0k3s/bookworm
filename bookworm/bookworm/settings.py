@@ -29,7 +29,7 @@ SECRET_KEY = '*j$9n$+ofto#0ex+#7%gz(t9eujen6ons21a7!+vs5oi9yn7_o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://bookworme.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
