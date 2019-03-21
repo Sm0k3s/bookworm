@@ -13,6 +13,7 @@ psycopg2-binary = "*"
 django-environ = "*"
 django-nose = "*"
 coverage = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
