@@ -1,0 +1,17 @@
+language: python
+python:
+  - '3.6'
+install:
+  - 'pip install pipenv'
+  - 'pip install coveralls'
+  - 'pipenv install'
+services:
+  - postgresql
+before_script:
+  - psql -c "CREATE DATABASE bookworm;" -U postgres  
+script:
+  - 'cd patienttracker/'
+  - 'coverage run --source="." manage.py test'
+  - 'coverage report'
+after_success:
+  - coveralls
