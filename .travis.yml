@@ -11,6 +11,8 @@ before_script:
   - psql -c "CREATE DATABASE bookworm;" -U postgres
 script:
   - 'cd bookworm/'
+  - 'python manage.py makemigrations'
+  - 'python manage.py migrate'
   - 'python manage.py test -v 2'
 after_success:
   - coveralls
