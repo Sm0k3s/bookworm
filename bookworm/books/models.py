@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class BookCategory(models.Model):
-    name = models.CharField(max_length=200, blank=True, default='')
+    name = models.CharField(max_length=200, blank=True, default='', unique=True)
 
     class Meta:
         ordering = ('name', )
@@ -18,7 +18,7 @@ class Book(models.Model):
         related_name='books',
         on_delete=models.CASCADE
     )
-    title = models.CharField(max_length=200, blank=True, default='')
+    title = models.CharField(max_length=200, blank=True, default='', unique=True)
     author = models.CharField(max_length=200, blank=True, default='')
     synopsis = models.CharField(max_length=300, blank=True, default='')
     category = models.ForeignKey(
