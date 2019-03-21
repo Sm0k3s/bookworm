@@ -1,8 +1,10 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from books import views
 
 
 urlpatterns = [
+    url(r'^auth/', include('rest_framework.urls',
+                           namespace='rest_framework')),
     url(r'^books/$', views.BookList.as_view(),
         name=views.BookList.name),
     url(r'^books/(?P<pk>[0-9]+)/$',

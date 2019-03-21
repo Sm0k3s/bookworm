@@ -13,6 +13,11 @@ class BookCategory(models.Model):
 
 
 class Book(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='books',
+        on_delete=models.CASCADE
+    )
     title = models.CharField(max_length=200, blank=True, default='')
     author = models.CharField(max_length=200, blank=True, default='')
     synopsis = models.CharField(max_length=300, blank=True, default='')
