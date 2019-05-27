@@ -38,7 +38,6 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
             'author',
             'synopsis',
             'category',
-            'publishing_date',
             'read')
 
 

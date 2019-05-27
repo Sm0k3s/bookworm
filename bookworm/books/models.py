@@ -25,7 +25,7 @@ class Book(models.Model):
         BookCategory,
         related_name='books',
         on_delete=models.CASCADE)
-    publishing_date = models.DateTimeField()
+    # publishing_date = models.DateTimeField()
     read = models.BooleanField(default=False)
 
     class Meta:
