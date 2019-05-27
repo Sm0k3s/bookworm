@@ -15,6 +15,7 @@ django-nose = "*"
 coverage = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-cors-middleware = "*"
 
 [requires]
 python_version = "3.7"

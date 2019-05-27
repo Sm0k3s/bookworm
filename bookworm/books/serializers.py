@@ -23,8 +23,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-
     category = serializers.SlugRelatedField(
         queryset=BookCategory.objects.all(),
         slug_field='name')
@@ -33,12 +31,10 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
         model = Book
         fields = (
             'url',
-            'owner',
             'title',
             'author',
             'synopsis',
             'category',
-            'publishing_date',
             'read')
 
 
